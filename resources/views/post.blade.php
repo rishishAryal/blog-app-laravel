@@ -7,19 +7,10 @@
     <h1>
         <a href="/post">My first Post</a>
     </h1>
-    <p>    sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
-        sdfhdfjdsjfdsjkfjdsfjksdjkfsjdkfnjsdkfn
+    <p>
+<?=     $post      ?>
     </p>
+
+    <a href="/">Go Back</a>
 </article>
 </body>
