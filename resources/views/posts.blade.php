@@ -3,8 +3,17 @@
 <title>My Blog</title>
 <link rel="stylesheet" href="/app.css">
 <body>
-<?php foreach ($posts as $post) :   ?>
+         @foreach ($posts as $post)
+<article>
 
-<?= $post ?>
-<?php endforeach; ?>
+    <h1>  <a href="/posts/{{ $post->slug }}">{{ $post->title }} </a>   </h1>
+
+
+
+    <p>
+        {{ $post->excerpt }}
+    </p>
+</article>
+
+ @endforeach
 </body>

@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\Post;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('posts');
+    return view('posts',
+    [
+        'posts'=> Post::all()
+    ]);
+
 });
+
+// $document = YamlFrontMatter::parseFile(resource_path('posts/my-fourth-post.html'));
+// dd(resource_path('posts/my-fourth-post.html'));
+//dd($document);
+//    /Users/rishisharyal/blog/resources/posts/my-fourth-post.html
+//    "/Users/rishisharyal/blog/resources/posts/my-first-post.html"
+//    return view('posts',
+//    [
+//        'posts'=> Post::all()
+//    ]);
+
 
 Route::get('posts/{post}',function($slug){  //posts/{post} is a route wildcards
     return view('post',[

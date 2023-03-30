@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="/app.css">
 <body>
 <article>
-
+<h1>{{ $post->title}} </h1>
     <p>
-<?=     $post;      ?>
+        {!! $post->body !!}
     </p>
 
     <a href="/">Go Back</a>
