@@ -35,9 +35,22 @@ public $slug;
     public static function find($slug) {
     // of all the blog posts, find the one with a slug that matches the one that was requested
 
-        return  static::all()->firstWhere('slug',$slug); // give me the first post where slug is equal to provide slug
+       return   static::all()->firstWhere('slug',$slug); // give me the first post where slug is equal to provide slug
 
 
+
+    }
+    public static function findOrFail($slug) {
+        // of all the blog posts, find the one with a slug that matches the one that was requested
+
+        $post =  static::find($slug); // give me the first post where slug is equal to provide slug
+
+        if(! $post){
+
+            throw new ModelNotFoundException();
+
+        }
+        return $post;
 
     }
 

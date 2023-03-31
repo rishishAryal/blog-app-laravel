@@ -36,7 +36,9 @@ Route::get('/', function () {
 
 
 Route::get('posts/{post}',function($slug){  //posts/{post} is a route wildcards
+    //dd($post);
     return view('post',[
-   'post'=> Post::find($slug)
+
+   'post'=> Post::findOrFail($slug)
     ]);
-        })->where('post','[A-z_\-]+'); // constraints for the route wildcards (rejected if letters other than a-z A-Z , -,_ is found )
+        }); // constraints for the route wildcards (rejected if letters other than a-z A-Z , -,_ is found )

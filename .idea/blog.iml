@@ -115,6 +115,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/mime-type-detection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/6e" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/26" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/88" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/ee" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/f2" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
