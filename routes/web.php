@@ -24,21 +24,13 @@ Route::get('/', function () {
 
 });
 
-// $document = YamlFrontMatter::parseFile(resource_path('posts/my-fourth-post.html'));
-// dd(resource_path('posts/my-fourth-post.html'));
-//dd($document);
-//    /Users/rishisharyal/blog/resources/posts/my-fourth-post.html
-//    "/Users/rishisharyal/blog/resources/posts/my-first-post.html"
-//    return view('posts',
-//    [
-//        'posts'=> Post::all()
-//    ]);
 
 
-Route::get('posts/{post}',function($slug){  //posts/{post} is a route wildcards
-    //dd($post);
+
+Route::get('posts/{post:slug}',function(Post $post){
+
     return view('post',[
 
-   'post'=> Post::findOrFail($slug)
+   'post'=> $post
     ]);
-        }); // constraints for the route wildcards (rejected if letters other than a-z A-Z , -,_ is found )
+        });
