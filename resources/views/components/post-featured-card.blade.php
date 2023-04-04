@@ -1,4 +1,3 @@
-
 @props(['post'])
 <article
     class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
@@ -18,28 +17,24 @@
                 </div>
 
                 <div class="mt-4">
-                    <h1 class="text-3xl">
-
-                        <a href="/posts/{{$post->slug}}">
+                    <a href="/posts/{{$post->slug}}"><h1 class="text-3xl">
                             {{$post->title}}
-                        </a>
+                        </h1></a>
 
-                    </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                                        Published  <time>{{$post->created_at->diffForHumans()}}</time>
+                                        Published <time>{{$post->created_at->diffForHumans()}}</time>
                                     </span>
                 </div>
             </header>
 
             <div class="text-sm mt-2">
                 <p>
-                    {{$post->excerpt}}
+                   {{$post->excerpt}}
                 </p>
 
 
             </div>
-
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
