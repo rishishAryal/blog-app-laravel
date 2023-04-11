@@ -9,16 +9,36 @@
 <body style="font-family: Open Sans, sans-serif">
 <section class="px-6 py-8">
     <nav class="md:flex md:justify-between md:items-center">
+
+
         <div>
             <a href="/">
                 <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
             </a>
         </div>
 
-        <div class="mt-8 md:mt-0">
-            <a href="/" class="text-xs font-bold uppercase">Home Page</a>
 
-            <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+            <div class="mt-8 flex justify-center items-center md:mt-0">
+                @auth
+
+                    <span class="text-xs block font-bold uppercase">Welcome, {{auth()->user()->name}}</span>
+
+                    <form  method="POST" action="/logout">
+                        @csrf
+                        <button class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 "
+                                type="submit">Logout</button>
+                    </form>
+                @else
+                    <a href="/register" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 ">
+                        Register
+                    </a>
+                    <a href="/login" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 ">
+                        Login
+                    </a>
+
+                @endauth
+
+            <a href="#" class="bg-red-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 ">
                 Subscribe for Updates
             </a>
         </div>
