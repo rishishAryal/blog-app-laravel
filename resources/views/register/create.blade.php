@@ -1,7 +1,7 @@
 <x-layout>
     <section class="px-6 py-8">
         <main class="max-w-lg mx-auto mt-10 bg-gray-100 border border-gray-200 p-6 rounded-xl">
-            <h1 class="text-center font-bold text-xl ">Register!</h1>
+            <h1 class="text-center font-bold text-xl ">Register <br> Or <br> <a href="/login" class="  inline-block bg-blue-500 text-white rounded px-2 py-2">Login</a></h1>
 
             <form method="POST" action="/register" class="mt-10">
                 @csrf

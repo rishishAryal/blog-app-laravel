@@ -53,15 +53,15 @@
                     <div class="space-y-4 lg:text-lg leading-loose">
                         {!! $post->body  !!}
                     </div>
-                    <h1 class="p-5 mt-7 rounded inline-block bg-gray-100">Your Comments:</h1>
+
                 </div>
+
 
                 <section class="col-span-8 space-y-6 mt-10 p-2  col-start-5  ">
 
-                    <x-post-comment />
-                    <x-post-comment />
-                    <x-post-comment />
-                    <x-post-comment />
+                    @foreach ($post->comments as $comment)
+                        <x-post-comment :comment="$comment" />
+                    @endforeach
 
 
 
