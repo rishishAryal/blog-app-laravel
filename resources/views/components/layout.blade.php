@@ -36,8 +36,10 @@ display: -webkit-box;
 
             <div class="mt-8 flex justify-center items-center md:mt-0">
                 @auth
-
-                    <span class="text-xs block font-bold uppercase">Welcome, {{auth()->user()->name}}</span>
+                    <a href="/admin/posts/create" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 ">
+                        Create a new post
+                    </a>
+                    <span class="text-xs ml-4 block font-bold uppercase">Welcome, {{auth()->user()->name}}</span>
 
                     <form  method="POST" action="/logout">
                         @csrf
@@ -57,6 +59,7 @@ display: -webkit-box;
             <a href="#newsletter" class="bg-red-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 ">
                 Subscribe for Updates
             </a>
+
         </div>
     </nav>
 
