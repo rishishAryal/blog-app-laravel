@@ -36,16 +36,22 @@ display: -webkit-box;
 
             <div class="mt-8 flex justify-center items-center md:mt-0">
                 @auth
-                    <a href="/admin/posts/create" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 ">
-                        Create a new post
-                    </a>
-                    <span class="text-xs ml-4 block font-bold uppercase">Welcome, {{auth()->user()->name}}</span>
+                    <x-dropdown>
+                        <x-slot name="trigger">
+                            <button class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}!</button>
+                        </x-slot>
+                        @admin
+                        <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Dashboard</x-dropdown-item>
+                        <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
+                        @endadmin
 
-                    <form  method="POST" action="/logout">
-                        @csrf
-                        <button class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 "
-                                type="submit">Logout</button>
-                    </form>
+                        <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
+
+                        <form id="logout-form" method="POST" action="/logout" class="hidden">
+                            @csrf
+                        </form>
+                    </x-dropdown>
+
                 @else
                     <a href="/register" class="bg-green-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 ">
                         Register
