@@ -20,7 +20,8 @@
             </header>
 
             <p>
-                {{ $comment->body }}
+
+               {{ $comment->body }}
             </p>
         </div>
     </article>
